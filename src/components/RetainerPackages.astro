@@ -1,0 +1,59 @@
+---
+import PricingTag from "./PricingTag.astro";
+
+const mini = {
+  name: "Mini",
+  hours: 3,
+  price: "4.245",
+  percentageDiscount: 5,
+  discount: "405",
+};
+
+const small = {
+  name: "Small",
+  hours: 8,
+  price: "11.320",
+  percentageDiscount: 5,
+  discount: "1.080",
+};
+
+const medium = {
+  name: "Medium",
+  hours: 12,
+  price: "16.080",
+  percentageDiscount: 10,
+  discount: "1.800",
+};
+
+const large = {
+  name: "Large",
+  hours: 18,
+  price: "22.770",
+  percentageDiscount: 15,
+  discount: "4.050",
+};
+
+const xLarge = {
+  name: "X-Large",
+  hours: 30,
+  price: "35.700",
+  percentageDiscount: 20,
+  discount: "9.000",
+};
+
+const retainerPackages = [mini, small, medium, large, xLarge];
+---
+
+<div class="retainer-packages-container">
+  {
+    retainerPackages.map((pkg) => (
+      <PricingTag
+        name={pkg.name}
+        hours={pkg.hours}
+        price={pkg.price}
+        percentageDiscount={pkg.percentageDiscount}
+        discount={pkg.discount}
+      />
+    ))
+  }
+</div>

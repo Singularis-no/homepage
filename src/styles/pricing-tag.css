@@ -1,0 +1,17 @@
+.retainer-packages-container {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.pricing-tag {
+  width: 200px;
+  padding: 0.1rem 0.5rem;
+  background-color: bisque;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-tag__name {
+}

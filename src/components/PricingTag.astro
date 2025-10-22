@@ -1,0 +1,9 @@
+---
+const { name, hours, price, percentageDiscount, discount } = Astro.props;
+import "../styles/pricing-tag.css";
+---
+
+<div class="pricing-tag">
+  <h2 class="pricing-tag__name">{name} - {hours} timer</h2>
+  <h2 class="pricing-tag__price">{price}kr per måned - spar {discount}kr!</h2>
+</div>

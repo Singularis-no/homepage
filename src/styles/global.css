@@ -1,0 +1,25 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.page-container {
+  margin: auto;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.slot-content {
+  align-items: center;
+  margin: auto;
+  flex: 1;
+}
