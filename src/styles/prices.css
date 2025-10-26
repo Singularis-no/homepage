@@ -1,0 +1,33 @@
+.accent {
+  background: linear-gradient(
+    135deg,
+    rgba(113, 90, 255, 0.12),
+    rgba(12, 16, 39, 0.9)
+  );
+}
+
+.prices {
+  display: grid;
+  gap: 3rem;
+}
+
+.prices-grid {
+  gap: 2rem;
+}
+
+.price-card {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2.5rem 2rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 960px) {
+  .prices-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

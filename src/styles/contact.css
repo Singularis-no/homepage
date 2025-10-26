@@ -1,0 +1,19 @@
+.final-cta {
+  background: linear-gradient(
+    135deg,
+    rgba(70, 232, 193, 0.2),
+    rgba(12, 16, 39, 0.85)
+  );
+}
+
+.final-cta-inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  justify-items: start;
+}
+
+.btn-column {
+  display: grid;
+  gap: 1rem;
+}
