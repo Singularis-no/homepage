@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import RetainerPackages from "../components/RetainerPackages.astro";
 const pageTitle = "Singularis";
 ---
 
@@ -83,33 +84,48 @@ const pageTitle = "Singularis";
         </p>
       </div>
       <div class="card-grid prices-grid">
-        <article class="card price-card">
-          <h3>Oppstartspakke</h3>
-          <p class="price">fra kr 10 000</p>
+        <article class="card price-card price-card--shopify">
+          <div class="price-card__header">
+            <h3>Oppstartspakke Shopify</h3>
+            <p class="price">fra kr 10 000</p>
+          </div>
           <ul class="list-check">
-            <li>Design og utvikling av skreddersydd forside</li>
-            <li>Responsivt oppsett og teknisk optimalisering</li>
-            <li>Kontaktpunkter koblet til e-post eller telefon</li>
+            <li>Skreddersydd Shopify-tema og oppsett av produkter</li>
+            <li>Integrasjon mot betaling, frakt og lagerstyring</li>
+            <li>Optimalisert for mobil, hastighet og konvertering</li>
           </ul>
           <a
             class="button button-secondary"
             href="mailto:kontakt@singularis.no"
           >
-            Bestill Oppstartspakke
+            Bestill Shopify-pakken
           </a>
         </article>
-        <article class="card price-card">
-          <h3>Retainer-pakker</h3>
-          <p class="price">tilpasset abonnement</p>
+        <article class="card price-card price-card--website">
+          <div class="price-card__header">
+            <h3>Oppstartspakke Nettside</h3>
+            <p class="price">fra kr 5 000</p>
+          </div>
           <ul class="list-check">
-            <li>Løpende innholds- og designoppdateringer</li>
-            <li>Teknisk vedlikehold og ytelsesforbedringer</li>
-            <li>Prioritert support og sparring når du trenger det</li>
+            <li>Design og utvikling av skreddersydd forside</li>
+            <li>Responsivt oppsett og teknisk optimalisering</li>
+            <li>Kontaktpunkter koblet til e-post eller kalender</li>
           </ul>
-          <a class="button button-primary" href="mailto:kontakt@singularis.no">
-            Snakk med oss om retainer
+          <a class="button button-secondary" href="mailto:kontakt@singularis.no">
+            Bestill Nettside-pakken
           </a>
         </article>
+      </div>
+      <div class="retainer-section">
+        <div class="retainer-header">
+          <h3>Retainer-pakker</h3>
+          <p>
+            Sikre deg forutsigbare forbedringer med faste timer hver måned.
+            Standard timepris er 1&nbsp;490 kr, men retainerne gir lavere
+            månedspris og prioritert støtte.
+          </p>
+        </div>
+        <RetainerPackages />
       </div>
     </div>
   </section>
@@ -209,13 +225,51 @@ const pageTitle = "Singularis";
 
   .price-card {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.75rem;
     padding: 2.5rem 2rem;
   }
 
+  .price-card--shopify,
+  .price-card--website {
+    background: rgba(12, 16, 39, 0.78);
+    border: 1px solid rgba(113, 90, 255, 0.35);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .price-card__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
   .price {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 700;
+    margin: 0;
+  }
+
+  .retainer-section {
+    margin-top: 3rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .retainer-header {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 640px;
+  }
+
+  .retainer-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .retainer-header p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
   }
 
   .final-cta {
