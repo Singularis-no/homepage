@@ -2,8 +2,19 @@
 import "../styles/footer.css";
 ---
 
-<footer class="footer-container">
-  <p>Singularis AS</p>
-  <p>Telefon: 41 10 67 97</p>
-  <p>E-post: kontakt@singularis.no</p>
+<footer class="footer-container" id="contact">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <h3>Singularis</h3>
+      <p>Vi bygger digitale opplevelser som skalerer og konverterer.</p>
+    </div>
+    <div class="footer-contact">
+      <span class="footer-label">Kontakt oss</span>
+      <a href="mailto:kontakt@singularis.no">kontakt@singularis.no</a>
+      <a href="tel:+4741106797">+47 41 10 67 97</a>
+    </div>
+    <div class="footer-meta">
+      <span>© {new Date().getFullYear()} Singularis AS. Alle rettigheter forbeholdt.</span>
+    </div>
+  </div>
 </footer>

@@ -1,18 +1,24 @@
 ---
 import Navigation from "./Navigation.astro";
-import "../styles/global.css";
 import "../styles/header.css";
 ---
 
-<header>
-  <div class="header-container">
-    <a href="/">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
       <img
         class="logo"
         src="../src/images/logo-small.png"
         alt="Singularis logo"
       />
+      <div class="brand-text">
+        <span class="brand-name">Singularis</span>
+        <span class="brand-tagline">Digital innovasjon, levert</span>
+      </div>
     </a>
-    <Navigation />
+    <div class="header-actions">
+      <Navigation />
+      <a class="button button-secondary" href="#contact">Book et møte</a>
+    </div>
   </div>
 </header>
