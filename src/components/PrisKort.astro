@@ -1,0 +1,33 @@
+---
+const {
+  navn,
+  timer,
+  pris,
+  prosentRabatt,
+  rabatt,
+  kunKontakt = false,
+} = Astro.props;
+import "../styles/priskort.css";
+---
+
+<div class="pris-kort" class:kun-kontakt={kunKontakt}>
+  <div class="pris-kort-tittel">
+    <h4 class="pris-kort-navn">{navn}</h4>
+    {!kunKontakt && <span class="pris-kort-merke">-{prosentRabatt}%</span>}
+  </div>
+  {
+    kunKontakt ? (
+      <div class="pris-kort-kontakt-innhold">
+        <p class="pris-kort-kontakt-undertekst">
+          Kontakt oss for skreddersydd løsning for din bedrift
+        </p>
+      </div>
+    ) : (
+      <>
+        <p class="pris-kort-timer">{timer} timer per måned</p>
+        <p class="pris-kort-pris">{pris} kr per måned</p>
+        <p class="pris-kort-rabatt">Spar {rabatt} kr mot timespris</p>
+      </>
+    )
+  }
+</div>

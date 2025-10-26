@@ -1,0 +1,74 @@
+---
+import PrisKort from "./PrisKort.astro";
+
+const mini = {
+  navn: "Mini",
+  timer: 3,
+  pris: "4.245",
+  prosentRabatt: 5,
+  rabatt: "405",
+  kunKontakt: false,
+};
+
+const small = {
+  navn: "Small",
+  timer: 8,
+  pris: "11.320",
+  prosentRabatt: 5,
+  rabatt: "1.080",
+  kunKontakt: false,
+};
+
+const medium = {
+  navn: "Medium",
+  timer: 12,
+  pris: "16.080",
+  prosentRabatt: 10,
+  rabatt: "1.800",
+  kunKontakt: false,
+};
+
+const large = {
+  navn: "Large",
+  timer: 18,
+  pris: "22.770",
+  prosentRabatt: 15,
+  rabatt: "4.050",
+  kunKontakt: false,
+};
+
+const xLarge = {
+  navn: "X-Large",
+  timer: 30,
+  pris: "35.700",
+  prosentRabatt: 20,
+  rabatt: "9.000",
+  kunKontakt: false,
+};
+
+const enterprise = {
+  navn: "Enterprise",
+  timer: null,
+  pris: null,
+  prosentRabatt: null,
+  rabatt: null,
+  kunKontakt: true,
+};
+
+const retainerPakker = [mini, small, medium, large, xLarge, enterprise];
+---
+
+<div class="retainer-pakker-container">
+  {
+    retainerPakker.map((pkg) => (
+      <PrisKort
+        navn={pkg.navn}
+        timer={pkg.timer}
+        pris={pkg.pris}
+        prosentRabatt={pkg.prosentRabatt}
+        rabatt={pkg.rabatt}
+        kunKontakt={pkg.kunKontakt}
+      />
+    ))
+  }
+</div>

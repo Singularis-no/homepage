@@ -1,0 +1,67 @@
+.accent {
+  background: linear-gradient(
+    135deg,
+    rgba(113, 90, 255, 0.12),
+    rgba(12, 16, 39, 0.9)
+  );
+}
+
+.prices-grid {
+  gap: 2rem;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2.5rem 2rem;
+  background: rgba(12, 16, 39, 0.78);
+  border: 1px solid rgba(113, 90, 255, 0.35);
+  box-shadow: var(--shadow-strong);
+  min-height: 100%;
+}
+
+.price-card .button {
+  margin-top: auto;
+}
+
+.price-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.retainer-section {
+  margin-top: 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.retainer-header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 640px;
+}
+
+.retainer-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.retainer-header p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 960px) {
+  .prices-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,59 @@
+.hero {
+  padding-top: 6rem;
+  padding-bottom: 4.5rem;
+}
+
+.hero-inner {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 1.5rem 0 2.5rem;
+  max-width: 580px;
+}
+
+.hero-visual {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-card {
+  background: linear-gradient(
+    145deg,
+    rgba(113, 90, 255, 0.2),
+    rgba(12, 16, 39, 0.95)
+  );
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(113, 90, 255, 0.35);
+  box-shadow: var(--shadow-strong);
+}
+
+.hero-card-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  color: rgba(246, 247, 255, 0.65);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 5rem;
+  }
+}
