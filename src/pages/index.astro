@@ -1,12 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Singularis";
-import PricingTag from "../components/PricingTag.astro";
 import RetainerPackages from "../components/RetainerPackages.astro";
 ---
-
 <BaseLayout pageTitle={pageTitle}>
-  <p>Velkommen til Singularis</p>
-
-  <RetainerPackages />
+  <section class="intro">
+    <p>Velkommen til Singularis</p>
+    <p>
+      Vi leverer strategiske og kreative tjenester som hjelper deg å bygge
+      sterke digitale opplevelser.
+    </p>
+  </section>
+  <section id="pricing" class="pricing-section">
+    <div class="pricing-section__intro">
+      <h2>Pakker og priser</h2>
+      <p>
+        Velg en retainer som passer dine behov – fra fleksible timer til
+        dedikerte samarbeid for å sikre kontinuitet og fremdrift i alle
+        prosjekter.
+      </p>
+    </div>
+    <RetainerPackages />
+  </section>
 </BaseLayout>
+
+<style>
+  .intro {
+    margin: 0 auto 3rem;
+    max-width: 48rem;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .pricing-section {
+    margin: 0 auto 4rem;
+    padding: 3rem 1.5rem;
+    background: #f8f7ff;
+    border-radius: 1.25rem;
+    max-width: 64rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .pricing-section__intro {
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .pricing-section {
+      padding: 2.5rem 1rem;
+    }
+  }
+</style>
