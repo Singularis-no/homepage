@@ -4,6 +4,11 @@ import "../styles/pricing-tag.css";
 ---
 
 <div class="pricing-tag">
-  <h2 class="pricing-tag__name">{name} - {hours} timer</h2>
-  <h2 class="pricing-tag__price">{price}kr per måned - spar {discount}kr!</h2>
+  <div class="pricing-tag__title">
+    <h4 class="pricing-tag__name">{name}</h4>
+    <span class="pricing-tag__badge">-{percentageDiscount}%</span>
+  </div>
+  <p class="pricing-tag__hours">{hours} timer per måned</p>
+  <p class="pricing-tag__price">{price} kr per måned</p>
+  <p class="pricing-tag__discount">Spar {discount} kr mot timespris</p>
 </div>
