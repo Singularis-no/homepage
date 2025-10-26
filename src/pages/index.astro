@@ -1,12 +1,386 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Singularis";
-import PricingTag from "../components/PricingTag.astro";
-import RetainerPackages from "../components/RetainerPackages.astro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Velkommen til Singularis</p>
+  <section class="hero section">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="section-label">Shopify · WordPress · AI &amp; Automatisering</span>
+        <h1 class="hero-title">
+          Skreddersydde digitale opplevelser
+          <span class="highlight">som konverterer</span>
+        </h1>
+        <p class="hero-subtitle">
+          Singularis er et norsk teknologibyrå drevet av brødre med lidenskap for
+          vekst. Vi kombinerer strategi, design og teknologi for å bygge nettbutikker
+          og digitale tjenester som leverer målbare resultater.
+        </p>
+        <div class="btn-row">
+          <a class="button button-primary" href="mailto:kontakt@singularis.no">
+            Start et prosjekt
+          </a>
+          <a class="button button-secondary" href="#services">Se hva vi leverer</a>
+        </div>
+        <div class="metrics-row">
+          <div class="metric-card">
+            <strong>120%</strong>
+            <span>Økt konvertering for våre Shopify-kunder i snitt</span>
+          </div>
+          <div class="metric-card">
+            <strong>30+</strong>
+            <span>Lanserte WordPress-løsninger de siste 18 månedene</span>
+          </div>
+          <div class="metric-card">
+            <strong>24t</strong>
+            <span>Fra idé til prototype med vår AI-drevne arbeidsflyt</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <span class="hero-card-label">Partnerskap som driver vekst</span>
+          <ul class="list-check">
+            <li>Konverteringsoptimaliserte Shopify- og WordPress-nettsteder</li>
+            <li>Integrasjoner mot ERP, CRM og betalingsløsninger</li>
+            <li>AI-assistenter, automatisering og datadrevne dashboards</li>
+          </ul>
+        </div>
+        <ul class="badge-list">
+          <li>Shopify Experts</li>
+          <li>WordPress &amp; WooCommerce</li>
+          <li>HubSpot &amp; Make.com</li>
+          <li>AI Prototyping</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <RetainerPackages />
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Tjenester</span>
+        <h2 class="section-title">Fra idé til fullt skalerbar digital løsning</h2>
+        <p class="section-subtitle">
+          Vi jobber tett med kundene våre for å definere strategien, bygge plattformen og
+          sikre løpende forbedringer. Resultatet er løsninger som er like elegante som de er
+          robuste.
+        </p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Shopify-eksperter</h3>
+          <p>
+            Konverteringsoptimaliserte nettbutikker, headless-arkitektur, custom temaer og
+            global skalering. Vi setter opp, designer og optimaliserer hele kundereisen.
+          </p>
+        </article>
+        <article class="card">
+          <h3>WordPress &amp; WooCommerce</h3>
+          <p>
+            Skreddersydde temaer, høy ytelse, sikker hosting og integrasjoner mot tredjeparts
+            systemer. Vi bygger redaktørvennlige løsninger med fokus på innhold og SEO.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Digital produktutvikling</h3>
+          <p>
+            Prototyping, brukerreiser og fullstack-utvikling med moderne rammeverk. Vi leverer
+            alt fra landingssider til komplekse webapplikasjoner.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Vedlikehold &amp; vekst</h3>
+          <p>
+            Retainer-avtaler med kontinuerlig optimalisering, A/B-testing, teknisk support og
+            datadrevne forbedringer basert på tydelige mål.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecommerce" class="section accent">
+    <div class="container ecommerce">
+      <div class="section-header">
+        <span class="section-label">E-handel</span>
+        <h2 class="section-title">Shopify og WordPress-løsninger som leverer</h2>
+        <p class="section-subtitle">
+          Fra første wireframe til optimalisert checkout: vi bygger, migrerer og skalerer
+          nettbutikker som gir kundene dine en sømløs opplevelse og teamet ditt komplett kontroll.
+        </p>
+      </div>
+      <div class="card-grid ecommerce-grid">
+        <article class="card">
+          <h3>Strategi &amp; Konvertering</h3>
+          <p>
+            Kundereiser, salgstrakter og dataanalyse for å sikre at hver piksel og hvert ord
+            bygger tillit og drivkraft.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Integrasjoner &amp; Automatisering</h3>
+          <p>
+            Koble sammen lager, logistikk, CRM og markedsføringsverktøy. Vi bygger flyt som sparer
+            timer hver uke.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Ytelse &amp; Drift</h3>
+          <p>
+            Hosting, overvåkning, sikkerhet og løpende optimalisering slik at butikken alltid er
+            rask og tilgjengelig.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="automation" class="section">
+    <div class="container automation">
+      <div class="section-header">
+        <span class="section-label">AI &amp; Automatisering</span>
+        <h2 class="section-title">Fra manuelle prosesser til intelligente assistenter</h2>
+        <p class="section-subtitle">
+          Vi bygger AI-agenter, chatbots og automatiserte arbeidsflyter som gjør teamet ditt mer
+          effektivt og kundereisen mer personlig.
+        </p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>AI-drevet kundeservice</h3>
+          <p>
+            Chatbots og hjelpesenter som forstår kundens intensjon, integrert med dine data og
+            rutiner.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Automatiserte prosesser</h3>
+          <p>
+            Integrasjon med Make.com, Zapier og egendefinerte API-er for å redusere repetitive
+            oppgaver og feilmarginer.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Data &amp; Innsikt</h3>
+          <p>
+            Dashboard og rapportering som gir deg innsikt i sanntid og gjør det lett å ta
+            datadrevne beslutninger.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section accent">
+    <div class="container process">
+      <div class="section-header">
+        <span class="section-label">Arbeidsmetodikk</span>
+        <h2 class="section-title">Fleksibel prosess, leveranser med presisjon</h2>
+        <p class="section-subtitle">
+          Som et familieeid byrå er vi tett på alle prosjekter. Du får direkte tilgang til teamet
+          som bygger, optimaliserer og følger opp løsningen din.
+        </p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-number">1</span>
+          <div>
+            <h3>Oppdagelse &amp; strategi</h3>
+            <p>
+              Vi starter med innsikt, mål og KPI-er. Sammen kartlegger vi kundereisen og definerer
+              tydelige suksesskriterier.
+            </p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-number">2</span>
+          <div>
+            <h3>Design &amp; utvikling</h3>
+            <p>
+              Rask prototyping, designsystemer og modulær utvikling sikrer en løsning som er enkel å
+              videreutvikle.
+            </p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-number">3</span>
+          <div>
+            <h3>Lansering &amp; vekst</h3>
+            <p>
+              Kontinuerlig optimalisering, testing og forbedring med et dedikert team på retainer når
+              du trenger det mest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container testimonial-section">
+      <div class="testimonial">
+        <blockquote>
+          «Singularis kombinerer strategi og teknologi på en måte som gjør dem til en ekte partner.
+          Teamet er proaktivt, løsningsorientert og leverer alltid merverdi.»
+        </blockquote>
+        <cite>Maria Dahl – COO, Nordisk Retail</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final-cta">
+    <div class="container final-cta-inner">
+      <div>
+        <span class="section-label">La oss ta en prat</span>
+        <h2 class="section-title">Klar for å løfte den digitale satsingen deres?</h2>
+        <p class="section-subtitle">
+          Book et uforpliktende møte for å se hvordan vi kan hjelpe deg med å bygge en moderne
+          butikk, automatisere prosesser eller lansere nye digitale tjenester.
+        </p>
+      </div>
+      <div class="btn-row">
+        <a class="button button-primary" href="mailto:kontakt@singularis.no">
+          kontakt@singularis.no
+        </a>
+        <a class="button button-secondary" href="tel:+4741106797">+47 41 10 67 97</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-inner {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 2.5rem;
+    max-width: 580px;
+  }
+
+  .hero-visual {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .hero-card {
+    background: linear-gradient(145deg, rgba(113, 90, 255, 0.2), rgba(12, 16, 39, 0.95));
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(113, 90, 255, 0.35);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .hero-card-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    color: rgba(246, 247, 255, 0.65);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .badge-list li {
+    background: rgba(70, 232, 193, 0.18);
+    border-color: rgba(70, 232, 193, 0.4);
+    color: var(--text-primary);
+  }
+
+  .accent {
+    background: linear-gradient(135deg, rgba(113, 90, 255, 0.12), rgba(12, 16, 39, 0.9));
+  }
+
+  .ecommerce-grid .card,
+  .automation .card {
+    min-height: 220px;
+  }
+
+  .process-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding: 2rem;
+    border-radius: 22px;
+    background: rgba(7, 10, 28, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: rgba(113, 90, 255, 0.35);
+    border: 1px solid rgba(113, 90, 255, 0.55);
+  }
+
+  .testimonial-section {
+    max-width: 780px;
+  }
+
+  .final-cta {
+    background: linear-gradient(135deg, rgba(70, 232, 193, 0.2), rgba(12, 16, 39, 0.85));
+  }
+
+  .final-cta-inner {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    justify-items: start;
+  }
+
+  @media (min-width: 960px) {
+    .process-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 5rem;
+    }
+
+    .metrics-row {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+    .step-number {
+      justify-self: flex-start;
+    }
+  }
+</style>
