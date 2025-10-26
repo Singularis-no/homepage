@@ -18,13 +18,9 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   color: inherit;
-}
-
-.logo {
-  width: 54px;
-  height: auto;
+  text-decoration: none;
 }
 
 .brand-text {
@@ -47,13 +43,12 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
 }
 
 .navigation-container {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   font-weight: 500;
 }
 
@@ -64,6 +59,21 @@
 
 .navigation-container a:hover,
 .navigation-container a:focus {
+  color: var(--text-primary);
+}
+
+.navigation-container .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  gap: 0.35rem;
+  color: var(--text-primary);
+}
+
+.navigation-container .button:hover,
+.navigation-container .button:focus {
   color: var(--text-primary);
 }
 
@@ -84,10 +94,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.2rem;
-  }
-
-  .button-secondary {
-    width: auto;
   }
 }
 
