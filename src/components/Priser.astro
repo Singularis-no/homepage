@@ -148,6 +148,31 @@ const prices = {
     nettsidePrice.innerHTML = `fra kr ${priceData.nettside.toLocaleString("no-NO")} <span id="nettside-mva">${priceData.mvaText}</span>`;
     shopifyPrice.innerHTML = `fra kr ${priceData.shopify.toLocaleString("no-NO")} <span id="shopify-mva">${priceData.mvaText}</span>`;
 
+    // Oppdater retainer-pakker priser
+    const retainerPriser = document.querySelectorAll(".pris-kort-pris");
+    const retainerRabatter = document.querySelectorAll(".pris-kort-rabatt");
+
+    retainerPriser.forEach((element) => {
+      const bedriftPris = element.dataset.bedrift;
+      const privatPris = element.dataset.privat;
+
+      if (bedriftPris && privatPris) {
+        const currentPris = type === "bedrift" ? bedriftPris : privatPris;
+        const mvaText = type === "bedrift" ? "eks. mva" : "inkl. mva";
+        element.innerHTML = `${currentPris} kr per måned <span class="pris-kort-mva">${mvaText}</span>`;
+      }
+    });
+
+    retainerRabatter.forEach((element) => {
+      const bedriftRabatt = element.dataset.bedrift;
+      const privatRabatt = element.dataset.privat;
+
+      if (bedriftRabatt && privatRabatt) {
+        const currentRabatt = type === "bedrift" ? bedriftRabatt : privatRabatt;
+        element.textContent = `Spar ${currentRabatt} kr mot timespris`;
+      }
+    });
+
     // Oppdater toggle-knapper med ARIA-attributter
     const toggles = [privatToggle, bedriftToggle];
     toggles.forEach((toggle) => {

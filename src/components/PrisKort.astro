@@ -2,9 +2,11 @@
 const {
   navn,
   timer,
-  pris,
+  prisBedrift,
+  prisPrivat,
   prosentRabatt,
-  rabatt,
+  rabattBedrift,
+  rabattPrivat,
   kunKontakt = false,
 } = Astro.props;
 import "../styles/priskort.css";
@@ -25,8 +27,20 @@ import "../styles/priskort.css";
     ) : (
       <>
         <p class="pris-kort-timer">{timer} timer per måned</p>
-        <p class="pris-kort-pris">{pris} kr per måned</p>
-        <p class="pris-kort-rabatt">Spar {rabatt} kr mot timespris</p>
+        <p
+          class="pris-kort-pris"
+          data-bedrift={prisBedrift}
+          data-privat={prisPrivat}
+        >
+          {prisBedrift} kr per måned <span class="pris-kort-mva">eks. mva</span>
+        </p>
+        <p
+          class="pris-kort-rabatt"
+          data-bedrift={rabattBedrift}
+          data-privat={rabattPrivat}
+        >
+          Spar {rabattBedrift} kr mot timespris
+        </p>
       </>
     )
   }

@@ -1,61 +1,53 @@
 ---
 import PrisKort from "./PrisKort.astro";
 
-const mini = {
-  navn: "Mini",
-  timer: 3,
-  pris: "4.245",
+const timespris = 1490;
+
+const start = {
+  navn: "Start",
+  timer: 6,
+  prisBedrift: "8.500",
+  prisPrivat: "10.625",
   prosentRabatt: 5,
-  rabatt: "405",
+  rabattBedrift: "440",
+  rabattPrivat: "440",
   kunKontakt: false,
 };
 
-const small = {
-  navn: "Small",
-  timer: 8,
-  pris: "11.320",
-  prosentRabatt: 5,
-  rabatt: "1.080",
-  kunKontakt: false,
-};
-
-const medium = {
-  navn: "Medium",
-  timer: 12,
-  pris: "16.080",
+const grow = {
+  navn: "Grow",
+  timer: 10,
+  prisBedrift: "13.500",
+  prisPrivat: "16.875",
   prosentRabatt: 10,
-  rabatt: "1.800",
+  rabattBedrift: "1.400",
+  rabattPrivat: "1.400",
   kunKontakt: false,
 };
 
-const large = {
-  navn: "Large",
+const scale = {
+  navn: "Scale",
   timer: 18,
-  pris: "22.770",
+  prisBedrift: "22.800",
+  prisPrivat: "28.500",
   prosentRabatt: 15,
-  rabatt: "4.050",
-  kunKontakt: false,
-};
-
-const xLarge = {
-  navn: "X-Large",
-  timer: 30,
-  pris: "35.700",
-  prosentRabatt: 20,
-  rabatt: "9.000",
+  rabattBedrift: "4.020",
+  rabattPrivat: "4.020",
   kunKontakt: false,
 };
 
 const enterprise = {
   navn: "Enterprise",
   timer: null,
-  pris: null,
+  prisBedrift: null,
+  prisPrivat: null,
   prosentRabatt: null,
-  rabatt: null,
+  rabattBedrift: null,
+  rabattPrivat: null,
   kunKontakt: true,
 };
 
-const retainerPakker = [mini, small, medium, large, xLarge, enterprise];
+const retainerPakker = [start, grow, scale, enterprise];
 ---
 
 <div class="retainer-pakker-container">
@@ -64,9 +56,11 @@ const retainerPakker = [mini, small, medium, large, xLarge, enterprise];
       <PrisKort
         navn={pkg.navn}
         timer={pkg.timer}
-        pris={pkg.pris}
+        prisBedrift={pkg.prisBedrift}
+        prisPrivat={pkg.prisPrivat}
         prosentRabatt={pkg.prosentRabatt}
-        rabatt={pkg.rabatt}
+        rabattBedrift={pkg.rabattBedrift}
+        rabattPrivat={pkg.rabattPrivat}
         kunKontakt={pkg.kunKontakt}
       />
     ))
