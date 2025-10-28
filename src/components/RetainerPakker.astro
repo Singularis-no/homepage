@@ -47,7 +47,7 @@ const enterprise = {
   kunKontakt: true,
 };
 
-const retainerPakker = [start, grow, scale, enterprise];
+const retainerPakker = [start, grow, scale];
 ---
 
 <div class="retainer-pakker-container">
@@ -65,4 +65,17 @@ const retainerPakker = [start, grow, scale, enterprise];
       />
     ))
   }
+</div>
+
+<div class="enterprise-section">
+  <PrisKort
+    navn={enterprise.navn}
+    timer={enterprise.timer}
+    prisBedrift={enterprise.prisBedrift}
+    prisPrivat={enterprise.prisPrivat}
+    prosentRabatt={enterprise.prosentRabatt}
+    rabattBedrift={enterprise.rabattBedrift}
+    rabattPrivat={enterprise.rabattPrivat}
+    kunKontakt={enterprise.kunKontakt}
+  />
 </div>

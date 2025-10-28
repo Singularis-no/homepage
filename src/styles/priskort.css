@@ -10,6 +10,50 @@
   }
 }
 
+.enterprise-section {
+  margin-top: 1rem;
+}
+
+.enterprise-section .pris-kort {
+  width: 100%;
+  max-width: none;
+  padding: 1.25rem 1.15rem;
+  background: rgba(12, 16, 39, 0.72);
+  border-color: rgba(113, 90, 255, 0.35);
+  cursor: pointer;
+}
+
+.enterprise-section .pris-kort-navn {
+  font-size: 1.5rem;
+}
+
+.enterprise-section .pris-kort-kontakt-undertekst {
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.enterprise-section .pris-kort-kontakt-cta {
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.enterprise-section .pris-kort-kontakt-cta strong {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.pris-kort-kontakt-cta a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.pris-kort-kontakt-cta a:hover {
+  color: var(--text-primary);
+}
+
 .pris-kort {
   display: grid;
   padding: 1.25rem 1.15rem;
@@ -17,6 +61,14 @@
   background: rgba(12, 16, 39, 0.72);
   border: 1px solid rgba(113, 90, 255, 0.35);
   box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pris-kort:hover {
+  background: rgba(12, 16, 39, 0.85);
+  border-color: rgba(113, 90, 255, 0.5);
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
 }
 
 .pris-kort-tittel {
@@ -27,7 +79,7 @@
 }
 
 .pris-kort-navn {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
 }
@@ -43,6 +95,14 @@
   border: 1px solid rgba(113, 90, 255, 0.45);
   border-radius: 999px;
   padding: 0.25rem 0.6rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pris-kort:hover .pris-kort-merke {
+  background: rgba(113, 90, 255, 0.4);
+  border-color: rgba(113, 90, 255, 0.6);
+  color: rgba(246, 247, 255, 1);
+  transform: scale(1.05);
 }
 
 .pris-kort-timer {
@@ -71,6 +131,19 @@
   margin: 0;
   font-size: 0.9rem;
   color: rgba(70, 232, 193, 0.85);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pris-kort:hover .pris-kort-rabatt {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enterprise pakke hover-effekt */
+.pris-kort.kun-kontakt:hover .pris-kort-kontakt-undertekst {
+  color: var(--text-primary);
 }
 
 /* Kun-kontakt variant styles */
@@ -78,10 +151,32 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  text-align: left;
 }
 
 .pris-kort-kontakt-undertekst {
   margin: 0;
   font-size: 0.85rem;
   color: var(--text-secondary);
+}
+
+.pris-kort-kontakt-cta {
+  margin: 0;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.pris-kort-kontakt-cta strong {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.pris-kort-kontakt-cta a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.pris-kort-kontakt-cta a:hover {
+  color: var(--text-primary);
 }
