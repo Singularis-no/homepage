@@ -1,6 +1,27 @@
 ---
 import RetainerPakker from "./RetainerPakker.astro";
 import "../styles/priser.css";
+
+// Priser eks. mva (bedrift) - default
+const nettsideBedrift = 5000;
+const shopifyBedrift = 10000;
+
+// Priser inkl. mva (privat) - 25% mva
+const nettsidePrivat = Math.round(nettsideBedrift * 1.25);
+const shopifyPrivat = Math.round(shopifyBedrift * 1.25);
+
+const prices = {
+  bedrift: {
+    nettside: nettsideBedrift,
+    shopify: shopifyBedrift,
+    mvaText: "eks. mva",
+  },
+  privat: {
+    nettside: nettsidePrivat,
+    shopify: shopifyPrivat,
+    mvaText: "inkl. mva",
+  },
+};
 ---
 
 <section id="prices" class="section accent">
@@ -12,38 +33,72 @@ import "../styles/priser.css";
         Velg en oppstartspakke for å komme raskt i gang, og bygg videre med
         retainer-pakkene våre for kontinuerlig forbedring og vekst.
       </p>
-      <p class="mva-notice">Alle priser er eks. mva</p>
+
+      <!-- Toggle for privat/bedrift -->
+      <div class="price-toggle-container">
+        <button
+          id="bedrift-toggle"
+          class="price-toggle active"
+          data-type="bedrift"
+          aria-pressed="true"
+          aria-label="Vis priser for bedrifter"
+        >
+          Bedrift
+        </button>
+        <button
+          id="privat-toggle"
+          class="price-toggle"
+          data-type="privat"
+          aria-pressed="false"
+          aria-label="Vis priser for privatpersoner"
+        >
+          Privat
+        </button>
+      </div>
     </div>
+
     <div class="card-grid prices-grid">
       <article class="card price-card">
-        <div class="price-card__header">
+        <header class="price-card__header">
           <h3>Oppstartspakke Nettside</h3>
-          <p class="price">fra kr 5 000</p>
-        </div>
-        <ul class="list-check">
+          <p class="price" id="nettside-price" aria-live="polite">
+            fra kr {nettsideBedrift.toLocaleString("no-NO")}
+            <span id="nettside-mva">eks. mva</span>
+          </p>
+        </header>
+        <ul class="list-check" role="list">
           <li>Design og utvikling av skreddersydd forside</li>
           <li>Responsivt oppsett og teknisk optimalisering</li>
           <li>Kontaktpunkter koblet til e-post eller kalender</li>
         </ul>
-        <a class="button button-secondary" href="#contact">
-          Kontakt oss om Nettside-pakken
-        </a>
+        <footer class="price-card__footer">
+          <a class="button button-secondary" href="#contact">
+            Kontakt oss om Nettside-pakken
+          </a>
+        </footer>
       </article>
+
       <article class="card price-card">
-        <div class="price-card__header">
+        <header class="price-card__header">
           <h3>Oppstartspakke Shopify</h3>
-          <p class="price">fra kr 10 000</p>
-        </div>
-        <ul class="list-check">
+          <p class="price" id="shopify-price" aria-live="polite">
+            fra kr {shopifyBedrift.toLocaleString("no-NO")}
+            <span id="shopify-mva">eks. mva</span>
+          </p>
+        </header>
+        <ul class="list-check" role="list">
           <li>Skreddersydd Shopify-tema og oppsett av produkter</li>
           <li>Integrasjon mot betaling, frakt og lagerstyring</li>
           <li>Optimalisert for mobil, hastighet og konvertering</li>
         </ul>
-        <a class="button button-secondary" href="#contact">
-          Kontakt oss om Shopify-pakken
-        </a>
+        <footer class="price-card__footer">
+          <a class="button button-secondary" href="#contact">
+            Kontakt oss om Shopify-pakken
+          </a>
+        </footer>
       </article>
     </div>
+
     <div class="retainer-section">
       <div class="retainer-header">
         <h3>Retainer-pakker</h3>
@@ -57,3 +112,62 @@ import "../styles/priser.css";
     </div>
   </div>
 </section>
+
+<script define:vars={{ prices }}>
+  // DOM elementer
+  const privatToggle = document.getElementById("privat-toggle");
+  const bedriftToggle = document.getElementById("bedrift-toggle");
+  const nettsidePrice = document.getElementById("nettside-price");
+  const shopifyPrice = document.getElementById("shopify-price");
+  const nettsideMva = document.getElementById("nettside-mva");
+  const shopifyMva = document.getElementById("shopify-mva");
+
+  // Sjekk at alle elementer eksisterer
+  if (
+    !privatToggle ||
+    !bedriftToggle ||
+    !nettsidePrice ||
+    !shopifyPrice ||
+    !nettsideMva ||
+    !shopifyMva
+  ) {
+    console.error("Noen av toggle-elementene ble ikke funnet");
+    return;
+  }
+
+  // Oppdater priser og UI
+  function updatePrices(type) {
+    const priceData = prices[type];
+
+    if (!priceData) {
+      console.error(`Ugyldig prisetype: ${type}`);
+      return;
+    }
+
+    // Oppdater oppstartspakker priser
+    nettsidePrice.innerHTML = `fra kr ${priceData.nettside.toLocaleString("no-NO")} <span id="nettside-mva">${priceData.mvaText}</span>`;
+    shopifyPrice.innerHTML = `fra kr ${priceData.shopify.toLocaleString("no-NO")} <span id="shopify-mva">${priceData.mvaText}</span>`;
+
+    // Oppdater toggle-knapper med ARIA-attributter
+    const toggles = [privatToggle, bedriftToggle];
+    toggles.forEach((toggle) => {
+      const isActive = toggle.dataset.type === type;
+      toggle.classList.toggle("active", isActive);
+      toggle.setAttribute("aria-pressed", isActive.toString());
+    });
+  }
+
+  // Event listeners med error handling
+  privatToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    updatePrices("privat");
+  });
+
+  bedriftToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    updatePrices("bedrift");
+  });
+
+  // Initialiser med bedrift som standard
+  updatePrices("bedrift");
+</script>

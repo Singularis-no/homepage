@@ -57,6 +57,16 @@
   font-size: 1rem;
 }
 
+.pris-kort-mva {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: 0.5rem;
+  display: inline-block;
+  min-width: 3.5rem;
+  text-align: left;
+}
+
 .pris-kort-rabatt {
   margin: 0;
   font-size: 0.9rem;
