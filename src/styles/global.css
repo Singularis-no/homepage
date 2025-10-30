@@ -8,8 +8,8 @@
   --text-primary: #f6f7ff;
   --text-secondary: rgba(246, 247, 255, 0.76);
   --border-color: rgba(255, 255, 255, 0.1);
-  --shadow-strong: 0 24px 60px rgba(19, 21, 54, 0.35);
-  --shadow-soft: 0 14px 45px rgba(17, 21, 40, 0.25);
+  --shadow-strong: 0 18px 48px rgba(19, 21, 54, 0.3);
+  --shadow-soft: 0 10px 32px rgba(17, 21, 40, 0.22);
   --max-width: 1200px;
 }
 
@@ -96,6 +96,7 @@ a:focus {
   color: var(--text-secondary);
   font-size: 1.05rem;
   margin: 0;
+  padding-bottom: 1.5rem;
 }
 
 .card-grid {
@@ -149,12 +150,12 @@ a:focus {
 .button-primary {
   background: linear-gradient(135deg, var(--color-primary), #4337ff);
   color: var(--text-primary);
-  box-shadow: 0 20px 40px rgba(73, 60, 255, 0.35);
+  box-shadow: 0 16px 32px rgba(73, 60, 255, 0.3);
 }
 
 .button-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 24px 50px rgba(73, 60, 255, 0.45);
+  box-shadow: 0 20px 40px rgba(73, 60, 255, 0.38);
 }
 
 .button-secondary {
