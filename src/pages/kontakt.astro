@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 import "../styles/kontakt.css";
+import KontaktSkjema from "../components/KontaktSkjema.astro";
 
 const pageTitle = "Kontakt oss - Singularis";
 const description =
@@ -39,78 +40,7 @@ const pakke = url.searchParams.get("pakke");
           </div>
         </div>
 
-        <div class="contact-form-container">
-          <form
-            name="kontakt"
-            method="POST"
-            data-netlify="true"
-            action="/takk"
-            class="contact-form"
-          >
-            <div class="form-group">
-              <label for="navn" class="form-label">Navn *</label>
-              <input
-                type="text"
-                id="navn"
-                name="navn"
-                required
-                class="form-input"
-                placeholder="Ditt fulle navn"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="epost" class="form-label">E-post *</label>
-              <input
-                type="email"
-                id="epost"
-                name="epost"
-                required
-                class="form-input"
-                placeholder="din@epost.no"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="pakke" class="form-label">Interessert i</label>
-              <select id="pakke" name="pakke" class="form-input">
-                <option value="">Velg pakke</option>
-                <option value="nettside">Nettside-pakken</option>
-                <option value="shopify">Shopify-pakken</option>
-                <option value="retainer">Retainer-pakker</option>
-                <option value="enterprise">Enterprise</option>
-                <option value="annet">Annet</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="nettside" class="form-label">Nettside</label>
-              <input
-                type="text"
-                id="nettside"
-                name="nettside"
-                class="form-input"
-                placeholder="www.din-nettside.no"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="melding" class="form-label">Melding *</label>
-              <textarea
-                id="melding"
-                name="melding"
-                required
-                rows="6"
-                class="form-textarea"
-                placeholder="Fortell oss om ditt prosjekt, behov og ønsker..."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="button button-primary form-submit">
-              Send melding
-            </button>
-          </form>
-        </div>
+        <KontaktSkjema />
       </div>
     </div>
   </section>
