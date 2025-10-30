@@ -9,11 +9,7 @@ const { pageTitle, description } = Astro.props;
 <html lang="no">
   <head>
     <meta charset="utf-8" />
-    <!-- Favicon varieties: JPEG/PNG (general), SVG (modern), Apple touch, Safari pinned -->
     <link rel="icon" type="image/jpeg" href={favicon.src} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href={favicon.src} />
-    <link rel="mask-icon" href="/favicon.svg" color="#715aff" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     {description && <meta name="description" content={description} />}
