@@ -149,12 +149,12 @@ a:focus {
 .button-primary {
   background: linear-gradient(135deg, var(--color-primary), #4337ff);
   color: var(--text-primary);
-  box-shadow: 0 20px 40px rgba(73, 60, 255, 0.35);
+  box-shadow: 0 16px 32px rgba(73, 60, 255, 0.30);
 }
 
 .button-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 24px 50px rgba(73, 60, 255, 0.45);
+  box-shadow: 0 20px 40px rgba(73, 60, 255, 0.38);
 }
 
 .button-secondary {
