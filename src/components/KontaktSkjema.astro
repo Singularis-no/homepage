@@ -74,5 +74,21 @@ import "../styles/kontakt.css";
     </button>
   </form>
 </div>
+<script>
+  // Velger riktig 'Interessert i' basert på ?pakke= i URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const pakke = urlParams.get("pakke");
+  if (pakke) {
+    const selectElement = document.getElementById("pakke");
+    if (selectElement) {
+      selectElement.value = pakke;
+    }
+  }
+  // Hvis vi har #contact-anker, scroll til skjema-containeren
+  if (window.location.hash === "#contact") {
+    const container = document.querySelector(".contact-form-container");
+    container?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+</script>
 
 

@@ -46,15 +46,4 @@ const pakke = url.searchParams.get("pakke");
   </section>
 </BaseLayout>
 
-<script>
-  // Sikre at dropdown-en velger riktig pakke basert på URL-parameter
-  const urlParams = new URLSearchParams(window.location.search);
-  const pakke = urlParams.get("pakke");
-
-  if (pakke) {
-    const selectElement = document.getElementById("pakke") as HTMLSelectElement;
-    if (selectElement) {
-      selectElement.value = pakke;
-    }
-  }
-</script>
+<!-- Prefill håndteres nå av KontaktSkjema-komponenten -->
